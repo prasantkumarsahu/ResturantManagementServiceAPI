@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -20,5 +21,17 @@ public class Food {
     private String description;
     private Double price;
     private String dummyImage;
-    private Timestamp dateAndTime;
+    private LocalDateTime dateAndTime;
+
+    public Food(String title, String description, Double price, String dummyImage) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.dummyImage = dummyImage;
+        this.dateAndTime = LocalDateTime.now();
+    }
+
+    public Food(Long id) {
+        this.id = id;
+    }
 }

@@ -25,7 +25,6 @@ public class User {
     @Email
     @Column(unique = true)
     private String email;
-    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "Not a strong password")
     private String password;
     @NotEmpty
     private String address;
